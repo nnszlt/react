@@ -15,47 +15,39 @@ class Click extends React.Component {
     click2() {
         alert(this.state.name)
     }
-    click3=()=>{
+    click3 = () => {
         alert(this.state.name)
 
     }
-    click4(e,v){
-    console.log(v)
+    click4(e, v) {
+        console.log(v)
         this.setState({
-            name:e
+            name: e
         })
     }
 
-    click5=(e)=>{
+    click5 = (e) => {
         alert(e.target.getAttribute("aid"))
-    
-        }
+        alert(e)
+    }
 
 
     render() {
-
-
         return (
-
             <div>
-              this.state.name= <span className="red"> {this.state.name}</span>
-              <br/>
-                <p onClick={this.click1.bind(this)}>bind(this)</p>
+                <span>this.state.name =</span>  < span className="red" > {this.state.name} </span>
                 <br />
-                <p onClick={this.click2}>构造函数中改变</p>
-                <br/>
-                <p onClick={this.click3}>  click3=()=>{}</p>
-                <br/>
-                <p onClick={this.click4.bind(this,"zcc")}>  click 传值</p>
-                <br/>
-                <p aid="aid" onClick={this.click5}>  click 传值获取属性</p>
-
+                <p onClick={this.click1.bind(this)} > bind(this)</p>
+                <br />
+                < p onClick={this.click2} > 构造函数中改变 </p>
+                <br />
+                <p onClick={this.click3} > click3 = () => {}</p>
+                <br />
+                <p onClick={this.click4.bind(this, "zcc")} > click 传值 </p>
+                <br />
+                <p aid="aid" onClick={()=>{this.click5(1)}} > click 传值获取属性</p>
             </div>
-
         )
-
-
-
     }
 
 }

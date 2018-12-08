@@ -18,7 +18,6 @@ class Style extends Component {
             <div>
                 <p className={this.data.class}>这里绑定属性和class</p>
                 <br />
-
                 <label htmlFor="name">
                     label 标签的for 要写成 htmlFor
                 </label>
