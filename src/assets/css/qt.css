@@ -1,0 +1,18 @@
+.qt {
+    height: 300px;
+  
+}
+.qt .left{
+    float: left;
+    width: 30%;
+    background: red;
+    height: 300px;
+    
+}
+.qt .right{
+    float: right;
+    width: 70%;
+    background: yellow;
+    height: 300px;
+    overflow: auto;
+}

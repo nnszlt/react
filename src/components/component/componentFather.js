@@ -40,7 +40,7 @@ class componentFather extends Component {
                 父组件主动获取子组件的数据
                 1、调用子组件的时候指定ref的值
                 2、通过this.refs.componentChildtoo  获取整个子组件实例
-                <ComponentChildtoo ref="componentChildtoo" />
+                <ComponentChildtoo ref="componentChildtoo" df="" />
                 <button onClick={this.getOtherChild}>    父组件向子组件拿值</button>
             </div>
         )

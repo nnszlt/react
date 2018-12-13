@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 
+
 import "./css/todolist.css";
 
 class Todolist extends Component {
@@ -8,7 +9,6 @@ class Todolist extends Component {
         super();
         this.state = {
             list: [
-
                 {
                     title: '录制nodejs',
                     checked: true
@@ -38,8 +38,8 @@ class Todolist extends Component {
         })
     }
     update = (i, v) => {
-        var list=this.state.list;
-        list[i].checked=!v;
+        var list = this.state.list;
+        list[i].checked = !v;
         this.setState({
             list: list
         })
@@ -55,7 +55,7 @@ class Todolist extends Component {
     render() {
 
         return (
-            <div>
+            <div className="Todolist">
                 <header>
                     <section>
                         <form action="#" ref="form" target="testif" onSubmit={this.submit}>
@@ -91,7 +91,7 @@ class Todolist extends Component {
                         }
                     </ul>
                 </section>
-
+                <br /><br />
 
             </div>
 
