@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import url from 'node.url';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Redirect,
+    withRouter
+} from "react-router-dom";
 class routerQtSon extends Component {
 
     constructor(props) {
@@ -9,12 +15,26 @@ class routerQtSon extends Component {
         }
     }
     componentDidMount() {
+        console.log(this.props)
     }
     render() {
 
         return (
             <div>
-              我是son1
+                我是son1
+              <ul>
+                    <li><Link to="/RouterQtFather/RouterQtSun1">Click</Link></li>
+                </ul>
+                {
+
+                    this.props.routes.map((v, k) => {
+                        return <Route key={k} exact path={v.path}
+                            render={props => (
+                                <v.component {...props} routes={v.routes} />
+                            )}
+                        />
+                    })
+                }
             </div>
         )
     }

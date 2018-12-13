@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import {
     BrowserRouter as Router,
     Route,
-    Link,
-    Redirect,
-    withRouter
+    Link
 } from "react-router-dom";
 import "../../../assets/css/qt.css"
-import RouterQtSon1 from "./routerQtSon1"
-import RouterQtSon2 from "./routerQtSon2"
+
 class routerQtFather extends Component {
 
     constructor(props) {
@@ -18,23 +15,35 @@ class routerQtFather extends Component {
         }
     }
     componentDidMount() {
+
     }
     render() {
 
         return (
-            <div className="qt">
-                <div className="left">
-                    <ul>
-                        <li><Link to="/RouterQtFather"> 1</Link></li>
-                        <li><Link to="/RouterQtFather/RouterQtSon2"> 2</Link></li>
+            <div>
+                <div className="qt">
+                    <div className="left">
+                        <ul>
+                            <li><Link to="/RouterQtFather"> 1</Link></li>
+                            <li><Link to="/RouterQtFather/RouterQtSon2"> 2</Link></li>
 
-                    </ul>
-                </div>
-                <div className="right" >
-                    <Route exact path="/RouterQtFather" component={RouterQtSon1} />
-                    <Route path="/RouterQtFather/RouterQtSon2" component={RouterQtSon2} />
-                </div>
+                        </ul>
+                    </div>
+                    <div className="right" >
+                        {
 
+                            this.props.routes.map((v, k) => {
+                                return <Route key={k} exact path={v.path}
+                                    render={props => (
+                                        <v.component {...props} routes={v.routes} />
+                                    )}
+                                />
+                            })
+                        }
+                    </div>
+
+                </div>
+   
             </div>
         )
     }

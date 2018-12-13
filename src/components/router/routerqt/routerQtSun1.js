@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-class routerQtSon extends Component {
+
+class routerQtSun1 extends Component {
 
     constructor(props) {
         super(props);
@@ -8,15 +9,16 @@ class routerQtSon extends Component {
         }
     }
     componentDidMount() {
+        console.log(this.props)
     }
     render() {
 
         return (
             <div>
-             我是son2
+              我是孙子1
             </div>
         )
     }
 
 }
-export default routerQtSon;
+export default routerQtSun1;
